@@ -22,6 +22,14 @@ export default class Dashboard extends Component {
         }).catch(err => console.log(err));
     }
 
+    // removeEntry(){
+    //     axios.delete('/api/houses', (req, res)).then(response => {
+    //         this.setState({
+    //             houses: response.data
+    //         })
+    //     }).catch(err => console.log(err));
+    // }
+
     render() {
         const houses = this.state.houses.map(house => {
             return (
@@ -36,7 +44,8 @@ export default class Dashboard extends Component {
         })
            
         return (
-            <div className="Dashboard">Dashboard
+            <div className="Dashboard">
+                <h2>Dashboard</h2>
                 <Link to='/wizard'><button className="btn">Add New Property</button></Link>
                     <House houses={houses} />
             </div>
